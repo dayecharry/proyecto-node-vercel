@@ -62,3 +62,13 @@ controladores-- > funciones de la logica del negocio (las funciones que se ejecu
       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGF5YW5hIiwiZW1haWwiOiJkYXlhbmExMjM0QGdtYWlsLmNvbSIsIl9pZCI6IjY2OTdmZWJhMzY1MWNmYzNjYTNhODMxNSIsImlhdCI6MTcyMTIzNzIyMiwiZXhwIjoxNzIxMjQwODIyfQ.ZC0eg2_aBGaIbgh3YzwOE_xzzq1vsKqScox7P1M-TNw"
     }
   ```
+- **Validar token** Para validar si el usuario esta logado, se debe hacer una petición a la siguiente ruta, enviando el token generado y si es corecto te devolvera una resùesta como la siguiente 
+  ***https://proyecto-node-vercel.onrender.com/user/isLogin***
+  
+  **respuesta**
+  ```json
+  {
+    "success": true,
+    "token": "correct"
+  }
+  ```
