@@ -91,4 +91,16 @@ const getUsers = async (req, res) => {
   }
 };
 
-module.exports = { register, login, modifyProfile, getUsers };
+const isLogin = async (req, res) => {
+  try {
+    if(req.userProfile){
+      return res.json({success: true, token:"correct"});
+    }
+    else {
+       return res.json({success: false, token:"incorrect"});
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+module.exports = { register, login, modifyProfile, getUsers, isLogin };
