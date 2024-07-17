@@ -22,6 +22,7 @@ const register = async (req, res) => {
       //const valPassword = validatePassword(req.body.password);
       //if (valPassword) {
         //3.- Encriptar la contraseña  antes de registrarme  HASH
+      console.log(userDoc.password)
         userDoc.password = bcrypt.hashSync(userDoc.password, 10);
         const createdUser = await userDoc.save();
         return res.status(200).json({ success: true, data: createdUser });
