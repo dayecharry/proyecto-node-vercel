@@ -5,6 +5,7 @@ const {
   login,
   modifyProfile,
   getUsers,
+  isLogin
 } = require('../controllers/user.controller');
 const { isAuth } = require('../../middleware/auth');
 //
@@ -15,5 +16,6 @@ router.post('/register', register);
 router.post('/login', login);
 router.put('/update', [isAuth], modifyProfile);
 router.get('/alluser', [isAuth], getUsers);
+router.get('/isLogin', [isAuth], isLogin);
 
 module.exports = router;
