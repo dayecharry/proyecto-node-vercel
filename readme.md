@@ -16,7 +16,21 @@ controladores-- > funciones de la logica del negocio (las funciones que se ejecu
     "password": "Maricarmen123"
   }
   ```
+**fetch** La peticion al servidor quedara algo como lo siguiente:
 
+```js
+  fetch(' https://proyecto-node-vercel.onrender.com/user/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'dayana',
+        email: 'dayana1239@gmail.com',
+        password: 'Dayana123',
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+```
   **respuesta**
   ```json
     {
