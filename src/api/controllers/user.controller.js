@@ -19,18 +19,18 @@ const register = async (req, res) => {
     if (!valEmail) {
       // valEmail === null
       //2.- La contraseña cumpla el patron requerido (regex)
-      const valPassword = validatePassword(req.body.password);
-      if (valPassword) {
+      //const valPassword = validatePassword(req.body.password);
+      //if (valPassword) {
         //3.- Encriptar la contraseña  antes de registrarme  HASH
         userDoc.password = bcrypt.hashSync(userDoc.password, 10);
         const createdUser = await userDoc.save();
         return res.status(200).json({ success: true, data: createdUser });
-      } else {
+     /* } else {
         return res.status(200).json({
           success: false,
           message: 'La contraseña no cumple con el patron indicado',
         });
-      }
+      }*/
     }
     return res
       .status(200)
